@@ -1,0 +1,30 @@
+/* VOYAGR styles · Designed & developed by Nikhil Chary Sriramoju */
+:root{--bg:#060914;--card:rgba(18,26,54,.72);--ink:#e8ecff;--mut:#8b97c7;--a:#22d3ee;--b:#a78bfa;--c:#f472b6;--bd:#243061}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+#bg{position:fixed;inset:0;z-index:-1}.w{max-width:960px;margin:auto;padding:16px}
+h1{font-size:2em;margin:.1em 0;letter-spacing:2px;background:linear-gradient(90deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;color:transparent}
+.card{background:var(--card);backdrop-filter:blur(8px);border:1px solid var(--bd);border-radius:14px;padding:14px;margin:12px 0;box-shadow:0 0 24px rgba(34,211,238,.06)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}.row{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+label{font-size:12px;color:var(--mut);display:block;margin-bottom:3px}
+input,select{width:100%;padding:10px;border-radius:9px;border:1px solid var(--bd);background:#0a1030;color:var(--ink);font:inherit}
+button{padding:10px 16px;border:0;border-radius:9px;background:linear-gradient(90deg,var(--a),var(--b));color:#050a1c;font-weight:700;cursor:pointer}
+button.s{background:#1c2656;color:var(--ink);font-weight:500;padding:6px 10px;font-size:13px}button:disabled{opacity:.5}
+a{color:var(--a)}.mut{color:var(--mut);font-size:13px}.tag{display:inline-block;background:#18214a;border:1px solid var(--bd);border-radius:20px;padding:2px 10px;margin:2px;font-size:12px}
+.pipe{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.chip{padding:4px 10px;border-radius:20px;border:1px solid var(--bd);font-size:12px;color:var(--mut)}
+.chip.on{color:#050a1c;background:linear-gradient(90deg,var(--a),var(--b));border-color:transparent;box-shadow:0 0 12px var(--a)}.chip.done{color:var(--a);border-color:var(--a)}
+#log{font:12px/1.6 ui-monospace,monospace;background:#03060f;border:1px solid var(--bd);border-radius:10px;padding:10px;max-height:190px;overflow:auto;color:#9fe7f5}
+#log i{color:var(--c);font-style:normal}.it{border-left:2px solid var(--b);padding:2px 0 2px 10px;margin:8px 0}
+.bar{height:10px;border-radius:6px;background:linear-gradient(90deg,var(--a),var(--b));margin:2px 0 8px}
+svg.map{width:100%;max-width:420px;background:#050a1c;border:1px solid var(--bd);border-radius:10px}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.kpi div{background:#0a1030;border:1px solid var(--bd);border-radius:10px;padding:8px;text-align:center}.kpi b{display:block;font-size:1.25em;color:var(--a)}
+canvas.fm{width:96px;height:96px;image-rendering:pixelated;border:1px solid var(--bd);border-radius:6px;margin-right:6px}
+details summary{cursor:pointer;color:var(--a)}.cred{text-align:center;border-color:var(--b)}.cred h2{margin:.2em 0;color:var(--c);letter-spacing:1px}
+body.light{--bg:#eef2ff;--card:rgba(255,255,255,.88);--ink:#0b1230;--mut:#4b587f;--bd:#c3cff0}body.light input,body.light select{background:#fff}body.light #log{background:#f4f7ff;color:#0b4a5c}body.light .kpi div,body.light .tag{background:#eaf0ff}body.light svg.map{background:#f4f7ff}
+.mic{display:flex;gap:6px}
+.ring{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--a) calc(var(--p)*1%),#1b2552 0);flex:none}.ring span{background:var(--bg);width:66px;height:66px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:1.25em;color:var(--a)}
+.mt{height:8px;border-radius:5px;background:#1b2552;margin:3px 0 8px}.mt i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--a),var(--b))}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:8px}.gal>div{background:#0a1030;border:1px solid var(--bd);border-radius:10px;overflow:hidden}.gal img{width:100%;height:120px;object-fit:cover;display:block}.gal p{margin:6px 8px;font-size:12px;color:var(--mut)}
+.dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}.ok{border-left:3px solid #4ade80;padding-left:10px}.no{border-left:3px solid #f87171;padding-left:10px}
+#lmap{height:340px;border-radius:10px;border:1px solid var(--bd);margin-top:8px;z-index:0}.chip.btn{cursor:pointer;text-decoration:none}
+@media print{#bg,.noprint,#log,.pipe{display:none!important}body{background:#fff;color:#000}.card{background:#fff;border-color:#999}}
+.it.best{border-left-color:#4ade80}.chip.btn{display:inline-block;margin:2px}
