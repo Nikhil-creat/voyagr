@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "headers": [
+    { "source": "/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "X-Frame-Options", "value": "DENY" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+      { "key": "Permissions-Policy", "value": "geolocation=(self), microphone=(self), camera=()" },
+      { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
+      { "key": "Content-Security-Policy-Report-Only", "value": "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" }
+    ]},
+    { "source": "/(sw.js|index.html)", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
+    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }] }
+  ]
+}

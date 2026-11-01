@@ -1,0 +1,4 @@
+Contact: mailto:sriramojunikhil66@gmail.com
+Expires: 2027-12-31T00:00:00.000Z
+Preferred-Languages: en, te, hi
+Policy: https://github.com/Nikhil-creat/voyagr/blob/main/SECURITY.md

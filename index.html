@@ -1,18 +1,23 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VOYAGR · AI Travel Planner</title><meta name="description" content="Door-to-door AI travel planner: route, travel cost, itinerary, budget, maps. Agentic AI, RAG, CNN, DFS.">
-<meta name="theme-color" content="#060914"><link rel="manifest" href="manifest.json"><link rel="icon" href="assets/img/icon.svg">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VOYAGR · Door-to-Door AI Travel Planner</title>
+<meta name="description" content="Door-to-door AI travel planner: route, travel cost, itinerary, budget, maps, weather, packing and expenses. Agentic AI, RAG, CNN, DFS. Free demo, no key needed.">
+<meta name="theme-color" content="#060914"><meta name="author" content="Nikhil Chary Sriramoju"><link rel="manifest" href="manifest.json"><link rel="icon" href="assets/img/icon.svg"><link rel="canonical" href="https://nikhil-creat.github.io/voyagr/">
+<meta property="og:type" content="website"><meta property="og:title" content="VOYAGR · AI Travel Planner"><meta property="og:description" content="Enter where you are, where you're going and a budget. Get the journey, cost, itinerary, maps and weather."><meta property="og:url" content="https://nikhil-creat.github.io/voyagr/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"VOYAGR","applicationCategory":"TravelApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Nikhil Chary Sriramoju","url":"https://github.com/Nikhil-creat"}}</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"><script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<link rel="stylesheet" href="assets/css/styles.css"></head><body><canvas id="bg"></canvas><div class="w">
-<h1>🛰 VOYAGR <button class="s noprint" id="th" style="float:right">🌗</button></h1><div class="mut">Autonomous AI Travel Planner · Agentic AI · RAG · CNN Vision · DFS Route Optimizer · Budget Critic · Door-to-door Journey Costs</div>
-
+<link rel="stylesheet" href="assets/css/styles.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400..600&family=JetBrains+Mono&display=swap"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="stylesheet" href="assets/css/v5.css"><link rel="stylesheet" href="assets/css/v6.css"></head><body><a class="skip" href="#plan">Skip to planner</a><canvas id="bg"></canvas>
+<div id="offline" class="offline" hidden>You are offline. Saved trips and the demo still work.</div>
+<header class="v5h noprint"><a class="brand" href="#top">🛰 VOYAGR</a><nav aria-label="Main"><a href="#plan">Plan</a><a href="#features">Features</a><a href="#tools">Toolbox</a><a href="#faq">FAQ</a><a href="https://github.com/Nikhil-creat/voyagr" target="_blank" rel="noopener">GitHub</a></nav><button class="s" id="inst" type="button" hidden>⬇ Install</button></header>
+<div class="track noprint" id="top"><div class="scene" id="scene"><svg id="sv" aria-hidden="true"><path id="trail" fill="none" stroke="#2f63ff" stroke-width="2" stroke-dasharray="3 7" stroke-linecap="round"/><g id="pO" class="pin"><circle r="6" fill="#fff" stroke="#111" stroke-width="2"/><text id="lO" y="-18" text-anchor="middle">YOU</text></g><g id="pD" class="pin"><circle r="6" fill="#2f63ff"/><text id="lD" y="-18" text-anchor="middle">ANYWHERE</text></g><g id="mk"><path d="M0-14L4-4 16 2v3L4 3 3 11l4 3v2L0 14-7 16v-2l4-3-1-8-12-3V2L-4-4z" fill="#2f63ff"/></g></svg><div class="band" id="band"><div class="strip" id="strip"><div class="lead"><h2>Everything your<br>trip needs.<br><i>Under one plan.</i></h2><div><p>From the first road to the last meal, VOYAGR plans every leg and prices it before you commit.</p><p>One place for the route, the budget, the weather, the places and the paperwork.</p></div></div><div class="cards"><div class="card6"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19a2 2 0 100-4 2 2 0 000 4zM19 9a2 2 0 100-4 2 2 0 000 4zM7 17h6a3 3 0 000-6h-2a3 3 0 010-6h6"/></svg><div class="ct"><h3>Door to door<br>routes</h3><p>Live road routes plus flight, train, bus and cab fares. Your travel cost comes off the budget first.</p></div></div><div class="card6"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg><div class="ct"><h3>Agent<br>planner</h3><p>Eight agents plan, check and revise your itinerary, then show their work step by step.</p></div></div><div class="card6"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h16a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2zM3 7l3-3h12v3M16 13h3"/></svg><div class="ct"><h3>Budget<br>guard</h3><p>A critic agent trims the plan until it fits what you can spend, per day and per person.</p></div></div><div class="card6"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><div class="ct"><h3>Private<br>by design</h3><p>Keys are encrypted on your device, inputs are screened, and nothing is sent to our servers.</p></div></div><div class="card6"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg><div class="ct"><h3>Offline<br>and export</h3><p>Install it, open saved trips without signal, and export to PDF, calendar or JSON.</p></div></div></div></div><a class="pill" href="#plan">Plan my trip</a></div><div class="letters" id="letters" aria-hidden="true">YOUR JOURNEY</div><div class="ro" id="ro" aria-hidden="true">00 KM/H</div></div></div>
+<div class="w">
+<h1 id="plan">🛰 VOYAGR <button class="s noprint" id="th" style="float:right" aria-label="Toggle light or dark theme">🌗</button></h1><div class="mut">Autonomous AI Travel Planner · Agentic AI · RAG · CNN Vision · DFS Route Optimizer · Budget Critic · Door-to-door Journey Costs</div>
 <details class="card noprint" id="kp" open><summary>🔑 API keys &amp; model <span id="ks" class="mut"></span></summary><div class="g" style="margin-top:10px">
 <div><label>AI provider</label><select id="prov"><option value="groq">Groq (free)</option><option value="gemini">Gemini (free)</option></select></div>
 <div><label>AI API key</label><input id="key" type="password" autocomplete="off" placeholder="gsk_… or AIza…"></div>
 <div><label>Model</label><select id="mdl"><option value="">Auto-detect (recommended)</option></select></div>
 <div><label>Google Maps key (optional)</label><input id="mkey" type="password"></div></div>
 <div class="row" style="margin-top:10px;justify-content:flex-start"><button class="s" id="tk" type="button">✔ Test &amp; save key</button><button class="s" id="ck" type="button">🗑 Clear</button></div>
-<div id="kmsg" class="mut" style="margin-top:6px">Keys autosave in this browser only. Free keys: console.groq.com · aistudio.google.com</div></details>
-
+<div id="kmsg" class="mut" style="margin-top:6px">Keys autosave in this browser only and are never sent to any server of ours. Free keys: console.groq.com · aistudio.google.com</div></details>
 <div class="card noprint"><div class="g">
 <div><label>From (your location)</label><div class="mic"><input id="from" placeholder="e.g. Hyderabad, India"><button class="s" id="loc" type="button" title="Use my current location">📍</button></div></div>
 <div><label>Destination</label><div class="mic"><input id="dest" placeholder="e.g. Goa, India"><button class="s" id="mic" type="button">🎤</button></div></div>
@@ -25,35 +30,38 @@
 <div style="margin-top:10px"><label>📷 Inspiration photo → CNN scene analysis (runs locally in your browser)</label><input id="img" type="file" accept="image/*"></div>
 <div class="row" style="margin-top:12px"><span><button id="go">⚡ Launch agents</button> <button id="demo" class="s">▶ Demo (no key)</button></span><span id="st" class="mut"></span></div>
 <div class="pipe" id="pipe"></div><div id="cnn"></div><div id="log">Agents idle. Waiting for mission…</div></div>
-
 <div id="out"></div>
 <div class="card noprint"><div class="row"><b>💾 Saved trips</b><span class="mut" id="cnt"></span></div><div id="saved"></div></div>
+
+<section id="features" class="noprint"><h2 class="v5t">What is inside</h2><div class="v5grid">
+<article class="card"><b>Door-to-door journey</b><p class="mut">Live road route, plus flight, train, bus and cab fares. Your chosen travel cost comes out of the budget first.</p></article>
+<article class="card"><b>Agent pipeline</b><p class="mut">Planner, route, vision, retrieval, drafter, budget critic, route optimizer and writer, each shown as it runs.</p></article>
+<article class="card"><b>Grounded answers</b><p class="mut">TF-IDF retrieval feeds travel facts to the model and to the Ask-VOYAGR chat.</p></article>
+<article class="card"><b>Photo scene analysis</b><p class="mut">A small convolution network reads your inspiration photo on-device. The photo never leaves your phone.</p></article>
+<article class="card"><b>Shortest daily route</b><p class="mut">Branch-and-bound search orders each day's stops by distance, and shows how much it skipped.</p></article>
+<article class="card"><b>Export and offline</b><p class="mut">PDF, JSON, calendar (.ics) and share link. Installs as an app and opens without signal.</p></article></div></section>
+
+<section id="tools" class="noprint"><h2 class="v5t">Travel toolbox</h2><div class="v5grid" id="toolbox"></div></section>
 
 <div class="card"><b>🧠 How it works</b><div class="mut" style="margin-top:6px">
 <b>Agentic AI:</b> Planner → CNN Vision → RAG Retriever → LLM Drafter → Budget Critic (self-revises) → DFS Optimizer → Writer.<br>
 <b>RAG:</b> TF-IDF cosine retrieval over a travel knowledge base grounds the LLM prompt.<br>
 <b>CNN:</b> Sobel convolution → ReLU → max-pooling feature maps + colour statistics classify the photo's scene type.<br>
 <b>DFS:</b> Branch-and-bound depth-first search finds the shortest visiting order of each day's stops using Haversine distances.<br>
-<b>Journey:</b> geocoding + OSRM road routing + a multi-modal fare model estimate door-to-door travel cost, which is reserved from your budget first.<br><b>Stack:</b> HTML/JS (Next.js-portable), Groq (auto-detects live models) / Gemini, Leaflet + OpenStreetMap, Wikipedia, Open-Meteo, Docker (nginx).</div></div>
+<b>Journey:</b> geocoding + OSRM road routing + a multi-modal fare model estimate door-to-door travel cost, which is reserved from your budget first.<br><b>Stack:</b> HTML/JS (Next.js-portable), Groq (auto-detects live models) / Gemini, Leaflet + OpenStreetMap, Wikipedia, Open-Meteo, Frankfurter rates, Docker (nginx).</div></div>
+
+<section id="faq" class="noprint"><h2 class="v5t">Questions</h2>
+<details class="card"><summary>Do I need an API key?</summary><p class="mut">No. Press Demo to see a full trip. A free Groq or Gemini key gives you live plans for any place.</p></details>
+<details class="card"><summary>Where is my key stored?</summary><p class="mut">Only in this browser's local storage. Requests go straight from your device to the AI provider. Clear it any time with the Clear button.</p></details>
+<details class="card"><summary>Are prices exact?</summary><p class="mut">No. Fares and costs are estimates from a distance-based model. Check live prices before you book.</p></details>
+<details class="card"><summary>Does it work offline?</summary><p class="mut">Install it from your browser menu. The app, saved trips and demo then open without signal. Live plans, maps and weather need a connection.</p></details>
+<details class="card"><summary>What data do you collect?</summary><p class="mut">None. There is no backend or tracking. Location is used only if you tap 📍, and only to fill the From box.</p></details></section>
 
 <div class="card cred"><div class="mut">Designed &amp; Developed by</div><h2>NIKHIL CHARY SRIRAMOJU</h2>
 <div class="mut">B.Tech CSE (2023–2027) · Vaagdevi College of Engineering · Telangana, India<br>AI / ML Engineer · Data Analytics · Agentic AI &amp; Full-Stack Developer</div>
-<div style="margin-top:8px"><a class="tag" target="_blank" href="https://github.com/Nikhil-creat">GitHub</a><a class="tag" target="_blank" href="https://in.linkedin.com/in/nikhil-chary-sriramoju-95041b38a">LinkedIn</a><a class="tag" href="mailto:sriramojunikhil66@gmail.com">sriramojunikhil66@gmail.com</a></div></div>
+<div style="margin-top:8px"><a class="tag" target="_blank" rel="noopener" href="https://github.com/Nikhil-creat">GitHub</a><a class="tag" target="_blank" rel="noopener" href="https://in.linkedin.com/in/nikhil-chary-sriramoju-95041b38a">LinkedIn</a><a class="tag" href="mailto:sriramojunikhil66@gmail.com">sriramojunikhil66@gmail.com</a></div></div>
 </div>
-<script src="assets/js/config.js"></script>
-<script src="assets/js/utils.js"></script>
-<script src="assets/js/background.js"></script>
-<script src="assets/js/pipeline-ui.js"></script>
-<script src="assets/js/rag.js"></script>
-<script src="assets/js/cnn.js"></script>
-<script src="assets/js/dfs.js"></script>
-<script src="assets/js/ai.js"></script>
-<script src="assets/js/travel.js"></script>
-<script src="assets/js/maps.js"></script>
-<script src="assets/js/render.js"></script>
-<script src="assets/js/storage.js"></script>
-<script src="assets/js/demo-data.js"></script>
-<script src="assets/js/features.js"></script>
-<script src="assets/js/agent.js"></script>
-<script src="assets/js/ui.js"></script>
+<footer class="v5f noprint"><div><b>🛰 VOYAGR</b><span class="mut"> v7.0 · MIT licence</span></div><nav aria-label="Footer"><a href="#plan">Plan</a><a href="#tools">Toolbox</a><a href="#faq">FAQ</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="https://github.com/Nikhil-creat/voyagr/issues" target="_blank" rel="noopener">Report a bug</a><a href="https://github.com/Nikhil-creat/voyagr" target="_blank" rel="noopener">Source</a></nav><div class="mut">Maps © OpenStreetMap contributors · Weather by Open-Meteo · Rates by Frankfurter · © <span id="yr">2026</span> Nikhil Chary Sriramoju</div></footer>
+<button id="top-btn" class="v5up noprint" type="button" aria-label="Back to top" hidden>↑</button><div id="toast" class="v5toast" role="status" aria-live="polite"></div>
+<script src="assets/js/config.js"></script><script src="assets/js/utils.js"></script><script src="assets/js/background.js"></script><script src="assets/js/pipeline-ui.js"></script><script src="assets/js/rag.js"></script><script src="assets/js/cnn.js"></script><script src="assets/js/dfs.js"></script><script src="assets/js/ai.js"></script><script src="assets/js/travel.js"></script><script src="assets/js/maps.js"></script><script src="assets/js/render.js"></script><script src="assets/js/storage.js"></script><script src="assets/js/demo-data.js"></script><script src="assets/js/features.js"></script><script src="assets/js/agent.js"></script><script src="assets/js/ui.js"></script><script src="assets/js/v5.js"></script><script src="assets/js/v6.js"></script><script src="assets/js/v6-ai.js"></script>
 </body></html>

@@ -1,0 +1,3 @@
+Developer: Nikhil Chary Sriramoju
+Site: VOYAGR
+Stack: HTML, CSS, JavaScript, Leaflet, Groq, Gemini
